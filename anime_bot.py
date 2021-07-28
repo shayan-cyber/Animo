@@ -218,7 +218,7 @@ async def on_message(message):
         def check(m):
             return m.author == message.author
         try:
-            guess = await client.wait_for('message', check=check, timeout=5.0)
+            guess = await client.wait_for('message', check=check, timeout=10.0)
         except asyncio.TimeoutError:
             return  await message.channel.send("Sorry, You Took Too Long")
         rsp = nrt_character(guess.content)
@@ -244,7 +244,7 @@ async def on_message(message):
         def check(m):
             return m.author == message.author
         try:
-            guess = await client.wait_for('message', check=check, timeout=5.0)
+            guess = await client.wait_for('message', check=check, timeout=10.0)
         except asyncio.TimeoutError:
             return  await message.channel.send("Sorry, You Took Too Long")
         rsp = nrt_village(guess.content)
@@ -276,12 +276,12 @@ async def on_message(message):
         def check(m):
             return m.author == message.author
         try:
-            rank = await client.wait_for('message', check=check, timeout=5.0)
+            rank = await client.wait_for('message', check=check, timeout=10.0)
         except asyncio.TimeoutError:
             return  await message.channel.send("Sorry, You Took Too Long")
         await message.channel.send("**" +"Please Enter Village's name :" + "**")
         try:
-            village = await client.wait_for('message', check=check, timeout=5.0)
+            village = await client.wait_for('message', check=check, timeout=10.0)
         except asyncio.TimeoutError:
             return  await message.channel.send("Sorry, You Took Too Long")
 
